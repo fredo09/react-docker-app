@@ -8,3 +8,18 @@ before_install:
 script:
   - docker run -e CI=true alfredo09/react-dev npm run test
 
+# Creamos la opcion de deplay
+deploy:
+# donde mandamos la aplicacion a la nube
+  provider: elasticbeanstalk
+  region:"us-east-2"
+  app:"react-app"
+  env:"Reactapp-env"
+  bucket_name:"elasticbeanstalk-us-east-2-444894385631"
+  bucket_path:"react-app"
+  access_key_id:$AWS_ACCESS_KEY
+  secret_access_key:"$AWS_SECRET_KEY"
+# cuando ejecutamos el envio de cambios
+  on:
+    branch: master 
+
