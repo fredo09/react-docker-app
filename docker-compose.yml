@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  react-app:
+    container_name: react-app
+# Como llamanos diferente a un archivo dockerfile usamos esta configuracion
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - 80:3000
+# Aqui usamos una configuracion diferente ya que este volumen lo usamos para recargar la app cuando halla un cambio 
+    volumes:
+# que no toque esta carpeta y copie todo el contenido del directorio actual a la Workdir que se creo en el contendor
+      - /app/node_modules
+      - ./:/app
