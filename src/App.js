@@ -9,6 +9,9 @@ function App() {
         <p>
           Edit Freddy!! 2
         </p>
+	<p>
+	otra rama
+	</p>
         <a
           className="App-link"
           href="https://reactjs.org"
