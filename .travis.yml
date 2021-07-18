@@ -1,3 +1,4 @@
+# creando archivo travis de configuracion
 sudo: requred
 services:
   - dokcer
